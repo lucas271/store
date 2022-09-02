@@ -1,0 +1,124 @@
+@use '../../../styles/variables' as *;
+
+.empty_cart{
+    display: flex;
+    width: 70vw;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh auto;
+    height: 80vh;
+
+    h3{
+        font-size: 30px;
+    }
+}
+.quantity_arrow{
+    cursor: pointer;
+
+    &:hover{
+        transition: 0.3s;
+        color: rgb(85, 85, 85);
+    }
+}
+
+
+.cart_container{
+    .trash{
+        position: absolute;
+        right: 0%;
+        cursor: pointer;
+        color: rgb(37, 37, 37);
+        
+        &:hover{
+            transition: 0.3s;
+            color: rgb(85, 85, 85);
+
+        }
+    }
+
+    position: relative;
+    border: 1px solid gray;
+    width: 85vw;
+    height: 77vh;
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+
+    .cart_table_container{
+        margin-top: 20px;
+        height: 80%;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 40px;
+    }
+
+    .cart_item_container{
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .cart_item_field{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.description{
+    font-weight: bold;
+}
+
+.cart_footer_container{
+    button{
+        margin-top: 5px;
+        border: 1px solid $primary-color;
+        padding: 5px;
+        background-color: transparent;
+        border-radius: 5px;
+        width: 90px;
+        cursor: pointer;
+
+        &:hover{
+            transition: 0.3s;
+            background-color: $primary-color;
+        }
+    }
+}
+
+
+@media (max-width: 700px){
+    .cart_container .trash{
+        right: 34%;
+    }
+    .cart_container{
+        width: 93vw;
+    }
+    .cart_container .cart_table_container{
+        span, p{
+            font-size: 14px;
+        }
+        h2{
+            font-size: 17px;
+        }
+    }
+}
+
+@media (max-width: 350px){
+    .cart_container .cart_table_container{
+        span, p{
+            font-size: 9px;
+        }
+        h2{
+            font-size: 14px;
+        }
+    }
+}

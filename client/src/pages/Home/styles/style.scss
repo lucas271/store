@@ -1,0 +1,56 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.items_container{
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+    gap: 20px;
+
+    .item_container{
+        margin: auto;
+        
+        @include flexSetup(center, space-evenly);
+        flex-direction: column;
+
+        height: 35vw;
+        width: 85%;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover{
+            transition: 0.4s;
+            box-shadow: 0 0 12px rgb(199, 199, 199);
+        }
+
+        img{
+            height: 80%;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 700px){
+    .items_container{
+        grid-template-columns: 1fr 1fr;
+
+
+        .item_container{
+            height: 50vw;
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .items_container{
+        grid-template-columns: 1fr;
+        gap: 8vh;
+
+
+        .item_container{
+            height: 95vw;
+        }
+    }
+}
+

@@ -1,0 +1,10 @@
+@mixin flexSetup($align_items, $justify_content) {
+    display: flex;
+    align-items: $align_items;
+    justify-content: $justify_content;
+}
+
+@mixin setupBorder($size, $type, $color, $border_radius){
+    border: $size $type $color;
+    border-radius: $border_radius;
+}

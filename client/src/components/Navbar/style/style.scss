@@ -1,0 +1,42 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.navbar_container{
+    position: relative;
+    width: 100%;
+    height: 10vh;
+}
+
+.navbar{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+
+    @include flexSetup(center, space-around);
+    background-color: $primary-color;
+
+    ul{
+        display: flex;
+        gap: 3vw;
+        align-items: center;
+        justify-content: center;
+
+        .cart{
+            position: relative;
+        
+            .cart_items_number{
+                font-size: 14px;
+                position: absolute;
+                right: -25%;
+                top: 40%;
+                background-color: yellowgreen;
+                width: 20px;
+                height: 20px;
+                
+                @include flexSetup(center, center);
+                border-radius: 50%;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: $background-color;
+    text-transform: capitalize;
+    overflow-x: hidden;
+    text-align: center;
+    color: $text-color;
+
+
+    button{
+        text-transform: capitalize;
+        text-align: center;
+    }
+}
+
+.loading{
+    width: 17px;
+    height: 17px;
+}
+
+.send_btn{
+    background-color: $background-color;
+    padding: 10px;
+    width: 30%;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 2vw;
+    text-align: center;
+    width: 90%;
+
+    &:hover{
+        transition: 0.3s;
+        background-color: darken($background-color, 20%);
+    }
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: lighten($text-color, 10%);
+
+    &:hover{
+        transition: 0.3s;
+        color: darken($text-color, 30%);
+    }
+}

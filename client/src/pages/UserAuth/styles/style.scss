@@ -1,0 +1,134 @@
+@use '../../../styles/animations' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.page_container{
+    height: 100vh;
+    @include flexSetup(center, center);
+    overflow-x: hidden;
+
+    .change_form{
+        position: absolute;
+        bottom: 2%;
+        right: 0%;
+        width: 100%;
+        font-size: 15px;
+
+        span{
+            cursor: pointer;
+            color: lighten($text-color, 10%);
+            &:hover{
+                transition: 0.2s;
+                color: darken($text-color, 10%);
+            }
+        }
+    }
+
+    h1{
+        font-size: 4vw;
+    }
+
+
+    //setup user_auth_container sides, 
+    .user_auth_container_right, .user_auth_container_left{
+        position: relative;
+        height: 73vh;
+        width: 24vw;
+        border-radius: 0.4vw;
+        padding: 50px;
+        background-color: $primary-color;
+        overflow: hidden;
+
+
+        .error_container{
+            position: absolute;
+            top: 1.5%;
+            width: 80%;
+            left: 0%;
+            margin-left: 3vw;
+            padding: 3px;
+            border-radius: 20px;
+            background-color: rgb(180, 37, 37);
+        }
+        
+
+        .user_auth_form{
+            height: inherit;
+            @include flexSetup(center, space-evenly);
+            flex-direction: column;
+        }
+
+    }
+
+    .user_auth_container_right{
+        animation: 1s ease-in-out  come_from_right;
+    }
+    .user_auth_container_left{
+        animation: 1s ease-in-out  come_from_left;
+    }
+    .user_auth_container_hidden{
+        display: none;
+    }
+}
+
+//form inputs config
+.form_input{
+    padding: 1.5vw;
+    width: 90%;
+}
+
+
+//cellphone
+@media (max-width: 600px){
+    .page_container{
+        h1{
+            font-size: 7vw;
+        }
+
+        .user_auth_container_left, .user_auth_container_right{
+            height: 55vh;
+            width: 50vw;
+            border-radius: 1vw;
+
+            .send_btn{
+                font-size: 4vw;
+            }
+        
+            .error_container{
+                margin-left: 7vw;
+            }
+        }
+    }
+
+    .form_input{
+        padding: 1.5vw;
+        width: 100%;
+    }
+}
+
+
+//tablet
+@media (min-height: 1000px){
+    .page_container{
+        .user_auth_container_left, .user_auth_container_right{
+            width: 60vw;
+            border-radius: 1vw;
+        }
+    }
+}
+
+
+.errors_container{
+    position: absolute;
+
+    p{
+        font-size: 25px;
+    }
+}
+
+.loading_gif{
+    position: absolute;
+    width: 70%;
+    top: 22%;
+    right: 15%;
+}
